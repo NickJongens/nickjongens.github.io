@@ -1,0 +1,34 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "NickJongens",
+      "name": "Nick Jongens",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54479676?v=4",
+      "profile": "http://nickjongens.github.io",
+      "contributions": [
+        "code",
+        "ideas",
+        "test",
+        "maintenance",
+        "doc",
+        "design",
+        "review",
+        "content",
+        "a11y"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "nickjongens.github.io",
+  "projectOwner": "Nick Jongens",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "commitType": "docs",
+  "commitConvention": "angular"
+}
