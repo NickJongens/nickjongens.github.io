@@ -73,7 +73,7 @@ body.light-theme .menu-bar {
 }
 
 body.light-theme .menu-bar ul li a {
-    color: #ffffff;
+    color: #000000;
 }
 
 .menu-bar ul li a:hover {
@@ -119,7 +119,7 @@ body.light-theme .theme-toggle-container {
 }
 
 body.light-theme .theme-toggle-container .toggle-circle {
-    background-color: #bb86fc;
+    background-color: #6200ee;
 }
 
 .theme-toggle-container input:checked + .toggle-label .toggle-circle {
@@ -158,6 +158,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
 }
 
 .profile-photo {
@@ -227,7 +228,6 @@ a:hover {
     padding: 0 1rem;
 }
 
-
 /* Style for the new Skills & Expertise and Experience sections */
 .skills h3, .experience h3 {
     font-size: 1.5rem;
@@ -251,7 +251,7 @@ a:hover {
 }
 
 body.light-theme .skills ul li strong {
-    color: #bb86fc;
+    color: #6200ee;
 }
 
 .skills ul li {
@@ -386,7 +386,6 @@ body.light-theme .experience p {
     color: #bb86fc; /* Purple color */
 }
 
-
 /* Light/Dark Mode */
 @media (prefers-color-scheme: dark) {
     .timeline::before {
@@ -489,7 +488,6 @@ body.light-theme #projects .project-description p {
         grid-template-columns: 1fr;
     }
 }
-
 
 /* Progress bar container */
 .progress-bar-container {
