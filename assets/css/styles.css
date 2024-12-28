@@ -434,88 +434,42 @@ body.light-theme .experience p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    background-color: #333;
+}
+
+.project-item img {
     width: 100%;
-    max-width: 400px;
-    transition: background-color 0.3s;
+    height: auto;
+    border-radius: 5px;
 }
 
-/* Project Description */
-.project-description h3 {
-    font-size: 1.2rem;
-    color: #bb86fc;
-    margin-bottom: 1rem;
+.project-item h3 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #bb86fc; /* Purple color */
 }
 
-.project-description p {
-    font-size: 1rem;
+.project-item p {
+    font-size: 0.9rem;
     color: #ffffff;
 }
 
-/* Hover Effect */
-.project-item:hover {
-    background-color: #333;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+/* Adjustments for light mode */
+body.light-theme .project-item {
+    background-color: #f1f1f1;
+    color: #121212;
 }
 
-/* Light theme equivalent styles */
-body.light-theme #projects .project-item {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+body.light-theme .project-item:hover {
+    background-color: #ddd;
 }
 
-body.light-theme #projects .project-description h3 {
-    color: #6200ee;
-}
-
-body.light-theme #projects .project-description p {
-    color: #333;
-}
-
-/* Center the project item if there's only one */
-.projects-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem; /* Adequate space between items */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Progress bar container */
-.progress-bar-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px; /* Thin bar */
-    background-color: rgba(0, 0, 0, 0.1); /* Subtle muted background */
-    border-radius: 50px; /* Rounded corners */
-    z-index: 9999; /* Ensures it's on top */
-}
-
-/* Progress bar that fills up */
-.progress-bar {
-    width: 0;
-    height: 100%;
-    background-color: #bb86fc; /* Light purple that fits both themes */
-    border-radius: 50px;
-    transition: width 0.1s ease-out; /* Smooth transition */
-}
-
-/* For light theme */
-body.light-theme .progress-bar-container {
-    background-color: rgba(0, 0, 0, 0.05); /* Slightly lighter for light theme */
-}
-
-/* For dark theme */
-body.dark-theme .progress-bar-container {
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly darker for dark theme */
+body.light-theme .project-item h3 {
+    color: #6200ee; /* Lighter color in light mode */
 }
