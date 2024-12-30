@@ -301,22 +301,16 @@ body.light-theme .experience p {
     width: 100%;
 }
 
-.timeline-item .timeline-content {
-    background-color: transparent;
-    padding: 15px;
-    border-radius: 5px;
-    position: relative;
-    width: calc(50% - 2rem);
-}
-
 .timeline-item.left .timeline-content {
     text-align: right;
-    margin-left: calc(2rem + 3px); /* Prevent overlap on the timeline */
+    margin-left: 50px; /* Increased left margin for better spacing */
+    width: calc(50% - 2rem);
 }
 
 .timeline-item.right .timeline-content {
     text-align: left;
-    margin-right: calc(2rem + 3px); /* Prevent overlap on the timeline */
+    margin-right: 50px; /* Increased right margin for better spacing */
+    width: calc(50% - 2rem);
 }
 
 .timeline-dot {
@@ -370,3 +364,4 @@ body.light-theme .timeline-dot {
         margin-right: 0.5rem; /* Adjust for smaller screens */
     }
 }
+
