@@ -303,14 +303,16 @@ body.light-theme .experience p {
 
 .timeline-item.left .timeline-content {
     text-align: right;
-    margin-left: 50px; /* Increased left margin for better spacing */
-    width: calc(50% - 2rem);
+    margin-left: 50px; /* Left side margin for better spacing */
+    width: calc(50% - 2rem); /* Left side takes up 50% minus space */
+    transform: translateX(-10%); /* Move left items to the left */
 }
 
 .timeline-item.right .timeline-content {
     text-align: left;
-    margin-right: 50px; /* Increased right margin for better spacing */
-    width: calc(50% - 2rem);
+    margin-right: 50px; /* Right side margin for better spacing */
+    width: calc(50% - 2rem); /* Right side takes up 50% minus space */
+    transform: translateX(10%); /* Move right items to the right */
 }
 
 .timeline-dot {
@@ -364,4 +366,5 @@ body.light-theme .timeline-dot {
         margin-right: 0.5rem; /* Adjust for smaller screens */
     }
 }
+
 
