@@ -1,4 +1,3 @@
-/* styles.css */
 /* General Reset */
 * {
     margin: 0;
@@ -34,8 +33,8 @@ body.light-theme {
 }
 
 body.light-theme .menu-bar {
-    background-color: #000000;
-    border-bottom: 1px solid #ffffff;
+    background-color: #ffffff; /* Fixed for light mode */
+    border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -56,6 +55,10 @@ body.light-theme .menu-bar {
     color: #ffffff;
 }
 
+body.light-theme .menu-bar .title {
+    color: #121212;
+}
+
 .menu-bar ul {
     display: flex;
     list-style: none;
@@ -73,7 +76,7 @@ body.light-theme .menu-bar {
 }
 
 body.light-theme .menu-bar ul li a {
-    color: #000000;
+    color: #121212;
 }
 
 .menu-bar ul li a:hover {
@@ -115,7 +118,7 @@ body.light-theme .menu-bar ul li a {
 }
 
 body.light-theme .theme-toggle-container {
-    background-color: #121212;
+    background-color: #e0e0e0;
 }
 
 body.light-theme .theme-toggle-container .toggle-circle {
@@ -178,7 +181,7 @@ footer {
     transition: color 0.3s;
 }
 
-footer.light-theme {
+body.light-theme footer {
     color: #666666;
     background-color: #f1f1f1;
 }
@@ -209,26 +212,16 @@ a:hover {
     }
 }
 
-/* Add spacing between the photo and description in the About Me section */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-/* Add spacing between the title and the image in the About Me section */
 #about h2 {
     margin-bottom: 2%;
 }
 
-/* Style for the new Skills & Expertise and Experience sections */
+/* Skills & Experience Section */
 .skills, .experience {
     margin-top: 40px;
     padding: 0 1rem;
 }
 
-/* Style for the new Skills & Expertise and Experience sections */
 .skills h3, .experience h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
@@ -243,19 +236,15 @@ a:hover {
 
 .skills ul li {
     margin-bottom: 10px;
+    font-size: 1rem;
 }
 
-/* Ensure the color of strong text in Skills section changes in light mode */
 .skills ul li strong {
     color: #bb86fc;
 }
 
 body.light-theme .skills ul li strong {
     color: #6200ee;
-}
-
-.skills ul li {
-    font-size: 1rem;
 }
 
 .experience p {
@@ -268,14 +257,6 @@ body.light-theme .experience p {
     color: #000000;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-}
-
-/* Add mobile responsiveness for the new sections */
 @media (max-width: 768px) {
     .skills, .experience {
         margin-top: 30px;
@@ -289,30 +270,29 @@ body.light-theme .experience p {
         font-size: 0.9rem;
     }
 }
+
 /* Timeline Styles */
 .timeline {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 0;
-    margin-top: 40px;  /* Add gap above the timeline */
-    width: 100%; /* Ensure full width of container */
+    margin-top: 40px;
+    width: 100%;
 }
 
-/* Vertical Line */
 .timeline::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 50%; /* Center the line */
-    transform: translateX(-50%); /* Center the line perfectly */
-    height: calc(100% - 40px); /* Ensure line length is consistent with the section */
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% - 40px);
     width: 3px;
-    background-color: #bb86fc; /* Updated to #bb86fc */
-    border-radius: 10px; /* Rounded corners on top and bottom */
+    background-color: #bb86fc;
+    border-radius: 10px;
 }
 
-/* Timeline Items */
 .timeline-item {
     display: flex;
     align-items: center;
@@ -322,43 +302,29 @@ body.light-theme .experience p {
     justify-content: center;
 }
 
-/* Adjust item alignment with respect to the line */
 .timeline-item.left .timeline-content {
-    text-align: right; /* Content to the right of the line */
-    margin-left: 50px;  /* Create space from the line */
-    margin-right: 0;
+    text-align: right;
+    margin-left: 50px;
 }
 
 .timeline-item.right .timeline-content {
-    text-align: left; /* Content to the left of the line */
-    margin-right: 50px; /* Create space from the line */
-    margin-left: 0;
+    text-align: left;
+    margin-right: 50px;
 }
 
-/* Dots on the Timeline */
 .timeline-dot {
     position: absolute;
     top: 0;
     left: 50%;
-    margin-left: -6px; /* Adjust to offset the dot to the left */
-    width: 12px;  /* Increased size for better visibility */
+    margin-left: -6px;
+    width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #bb86fc; /* Updated to #bb86fc */
+    background-color: #bb86fc;
     border: 2px solid #ffffff;
     z-index: 1;
 }
 
-/* Adjust the dots positions */
-.timeline-item.left .timeline-dot {
-    left: 50%; /* Place the dot directly on the line */
-}
-
-.timeline-item.right .timeline-dot {
-    left: 50%; /* Place the dot directly on the line */
-}
-
-/* Timeline Content */
 .timeline-content {
     background-color: transparent;
     padding: 15px;
@@ -382,94 +348,11 @@ body.light-theme .experience p {
     font-size: 0.9rem;
 }
 
-#projects h2, #contact h2 {
-    color: #bb86fc; /* Purple color */
+body.light-theme .timeline::before {
+    background-color: #e0e0e0;
 }
 
-/* Light/Dark Mode */
-@media (prefers-color-scheme: dark) {
-    .timeline::before {
-        background-color: #ffffff; /* Dark mode line color - white */
-    }
-
-    .timeline-dot {
-        background-color: #ffffff; /* Dark mode dot color - white */
-        border: 2px solid #bb86fc; /* Dark mode dot border color */
-    }
-
-    .timeline-item h4,
-    .timeline-item h5,
-    .timeline-item p {
-        color: #ffffff !important; /* Force white text for dark mode */
-    }
-
-    .timeline-item .timeline-content {
-        background-color: #333; /* Dark background for content */
-    }
-}
-
-/* Projects Section */
-#projects {
-    padding: 2rem 0;
-    margin-top: 40px;  /* Same margin as Experience and Timeline sections */
-    margin-bottom: 40px; /* Ensure equal spacing after the Projects section */
-    text-align: center;
-}
-
-/* Grid Container for Projects */
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;  /* Space between grid items */
-    justify-items: center;
-    padding: 0;
-    margin: 0;
-}
-
-/* Project Item Styling */
-.project-item {
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.project-item:hover {
-    transform: translateY(-10px);
-    background-color: #333;
-}
-
-.project-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.project-item h3 {
-    margin-top: 1rem;
-    font-size: 1.3rem;
-    color: #bb86fc; /* Purple color */
-}
-
-.project-item p {
-    font-size: 0.9rem;
-    color: #ffffff;
-}
-
-/* Adjustments for light mode */
-body.light-theme .project-item {
-    background-color: #f1f1f1;
-    color: #121212;
-}
-
-body.light-theme .project-item:hover {
-    background-color: #ddd;
-}
-
-body.light-theme .project-item h3 {
-    color: #6200ee; /* Lighter color in light mode */
+body.light-theme .timeline-dot {
+    background-color: #ffffff;
+    border: 2px solid #6200ee;
 }
