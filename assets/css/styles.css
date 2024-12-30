@@ -20,129 +20,331 @@ body.light-theme {
     color: #121212;
 }
 
-/* Adjusted consistent purple for light mode */
-.skills h3,
-.experience h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #bb86fc; /* Purple for both themes */
-}
-
-body.light-theme .skills h3,
-body.light-theme .experience h3 {
-    color: #bb86fc; /* Match dark mode purple */
-}
-
-/* Timeline Styles */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 0;
-    margin-top: 40px;
-    width: 100%;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: calc(100% - 40px);
-    width: 3px;
-    background-color: #bb86fc;
-    border-radius: 10px;
-}
-
-.timeline-item {
+.menu-bar {
     display: flex;
     align-items: center;
-    position: relative;
-    margin-bottom: 40px;
-    width: 100%;
-    justify-content: space-between; /* Fix for alignment */
-}
-
-.timeline-item.left .timeline-content {
-    text-align: right;
-    margin-left: auto;
-    margin-right: 5%;
-    width: 45%; /* Increased width */
-}
-
-.timeline-item.right .timeline-content {
-    text-align: left;
-    margin-left: 5%;
-    margin-right: auto;
-    width: 45%; /* Increased width */
-}
-
-.timeline-dot {
-    position: absolute;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #1e1e1e;
+    position: sticky;
     top: 0;
-    left: 50%;
-    margin-left: -6px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #bb86fc;
-    border: 2px solid #ffffff;
-    z-index: 1;
+    z-index: 1000;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.timeline-content {
-    background-color: transparent;
-    padding: 15px;
-    border-radius: 5px;
+body.light-theme .menu-bar {
+    background-color: #ffffff; /* Fixed for light mode */
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-bar .logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .logo {
+    max-width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.menu-bar .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+body.light-theme .menu-bar .title {
+    color: #121212;
+}
+
+.menu-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu-bar ul li {
+    margin-left: 1.5rem;
+}
+
+.menu-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+body.light-theme .menu-bar ul li a {
+    color: #121212;
+}
+
+.menu-bar ul li a:hover {
+    text-decoration: underline;
+}
+
+.theme-toggle-container {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #333;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle-container input {
+    display: none;
+}
+
+.theme-toggle-container .toggle-label {
+    width: 100%;
+    height: 100%;
+    display: block;
     position: relative;
 }
 
-.timeline-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+.theme-toggle-container .toggle-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #bb86fc;
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s;
+    transform: translateX(0);
 }
 
-.timeline-item h5 {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.timeline-item p {
-    font-size: 0.9rem;
-}
-
-/* Light theme adjustments */
-body.light-theme .timeline::before {
+body.light-theme .theme-toggle-container {
     background-color: #e0e0e0;
 }
 
-body.light-theme .timeline-dot {
-    background-color: #ffffff;
-    border: 2px solid #6200ee;
+body.light-theme .theme-toggle-container .toggle-circle {
+    background-color: #6200ee;
 }
 
-/* Mobile view adjustments for timeline */
+.theme-toggle-container input:checked + .toggle-label .toggle-circle {
+    transform: translateX(25px);
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* Progressive Content Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #cccccc;
+    background-color: #1e1e1e;
+    transition: color 0.3s;
+}
+
+body.light-theme footer {
+    color: #666666;
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
-    .timeline-item {
-        flex-direction: column; /* Stack items */
+    .menu-bar {
+        flex-direction: column;
         align-items: flex-start;
     }
 
-    .timeline-item.left .timeline-content,
-    .timeline-item.right .timeline-content {
-        width: 80%; /* Allow more space */
-        text-align: left;
-        margin: 0 auto;
+    .menu-bar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
     }
 
-    .timeline-dot {
-        left: 10%;
+    .menu-bar ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+#about h2 {
+    margin-bottom: 2%;
+}
+
+/* Skills & Experience Section */
+.skills, .experience {
+    margin-top: 40px;
+    padding: 0 1rem;
+}
+
+.skills h3, .experience h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #bb86fc;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.skills ul li strong {
+    color: #bb86fc;
+}
+
+body.light-theme .skills ul li strong {
+    color: #6200ee;
+}
+
+.experience p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+body.light-theme .experience p {
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .skills, .experience {
+        margin-top: 30px;
     }
 
-    .timeline::before {
-        left: 10%; /* Move line to align with dots */
+    .skills h3, .experience h3 {
+        font-size: 1.3rem;
     }
+
+    .skills ul li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Timeline fixes for mobile */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--text-secondary);
+}
+
+.timeline-item {
+  position: relative;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.timeline-item-content {
+  position: relative;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  width: calc(50% - 2rem);
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content {
+  left: 0;
+  margin-left: calc(2rem + 2px); /* Added space to prevent overlap with the timeline line */
+}
+
+.timeline-item:nth-child(even) .timeline-item-content {
+  right: 0;
+  margin-right: calc(2rem + 2px); /* Added space to prevent overlap with the timeline line */
+}
+
+.timeline-item-content::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 4px solid var(--bg-primary);
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content::after {
+  left: -2rem; /* Adjust for odd items */
+}
+
+.timeline-item:nth-child(even) .timeline-item-content::after {
+  right: -2rem; /* Adjust for even items */
+}
+
+/* Responsive tweaks for better fit */
+@media (max-width: 768px) {
+  .timeline-item-content {
+    width: calc(70% - 2rem); /* Allow more space on smaller screens */
+  }
+
+  .timeline-item:nth-child(odd) .timeline-item-content {
+    margin-left: 0.5rem; /* Reduced margin for odd items */
+  }
+
+  .timeline-item:nth-child(even) .timeline-item-content {
+    margin-right: 0.5rem; /* Reduced margin for even items */
+  }
 }
