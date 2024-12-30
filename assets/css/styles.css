@@ -33,7 +33,7 @@ body.light-theme {
 }
 
 body.light-theme .menu-bar {
-    background-color: #ffffff; /* Fixed for light mode */
+    background-color: #ffffff;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -299,17 +299,24 @@ body.light-theme .experience p {
     position: relative;
     margin-bottom: 40px;
     width: 100%;
-    justify-content: center;
+}
+
+.timeline-item .timeline-content {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    width: calc(50% - 2rem);
 }
 
 .timeline-item.left .timeline-content {
     text-align: right;
-    margin-left: 50px;
+    margin-left: calc(2rem + 3px); /* Prevent overlap on the timeline */
 }
 
 .timeline-item.right .timeline-content {
     text-align: left;
-    margin-right: 50px;
+    margin-right: calc(2rem + 3px); /* Prevent overlap on the timeline */
 }
 
 .timeline-dot {
@@ -323,14 +330,6 @@ body.light-theme .experience p {
     background-color: #bb86fc;
     border: 2px solid #ffffff;
     z-index: 1;
-}
-
-.timeline-content {
-    background-color: transparent;
-    padding: 15px;
-    border-radius: 5px;
-    position: relative;
-    width: 70%;
 }
 
 .timeline-item h4 {
@@ -355,4 +354,19 @@ body.light-theme .timeline::before {
 body.light-theme .timeline-dot {
     background-color: #ffffff;
     border: 2px solid #6200ee;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .timeline-item .timeline-content {
+        width: calc(70% - 2rem); /* Use more space for mobile */
+    }
+
+    .timeline-item.left .timeline-content {
+        margin-left: 0.5rem; /* Adjust for smaller screens */
+    }
+
+    .timeline-item.right .timeline-content {
+        margin-right: 0.5rem; /* Adjust for smaller screens */
+    }
 }
