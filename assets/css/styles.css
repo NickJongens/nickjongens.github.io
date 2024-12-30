@@ -1,54 +1,301 @@
-/* Global Styles for Dark Mode */
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Links */
+.menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #1e1e1e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.menu-bar .logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .logo {
+    max-width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.menu-bar .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.menu-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu-bar ul li {
+    margin-left: 1.5rem;
+}
+
+.menu-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-bar ul li a:hover {
+    text-decoration: underline;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* Progressive Content Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #cccccc;
+    background-color: #1e1e1e;
+    transition: color 0.3s;
+}
+
 a {
-    color: #1e90ff; /* Bright blue for contrast */
+    color: #bb86fc;
     text-decoration: none;
 }
 
 a:hover {
-    color: #63b8ff; /* Slightly lighter blue */
+    text-decoration: underline;
 }
 
-/* Headers */
-h1, h2, h3, h4, h5, h6 {
-    color: #ffffff; /* Ensure headers are fully visible */
+@media (max-width: 768px) {
+    .menu-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-bar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+
+    .menu-bar ul li {
+        margin: 0.5rem 0;
+    }
 }
 
-/* Menu Bar */
-.menu-bar {
-    background-color: #333;
-    color: #ffffff; /* Menu text is white */
+/* Skills Section */
+.skills {
+    margin-top: 40px;
+    padding: 0 1rem;
 }
 
-.menu-bar ul li a {
-    color: #ffffff; /* Menu links are white */
+.skills h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #bb86fc;
 }
 
-/* Profile Container */
-#about .profile-container img {
-    border: 3px solid #e0e0e0; /* Ensure profile picture is highlighted */
+.skills ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Skills & Timeline */
-.skills ul li, .timeline-content {
-    color: #e0e0e0; /* Default text color */
+.skills ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #ffffff;
 }
 
-/* Projects */
+/* Experience Section */
+.experience {
+    margin-top: 40px;
+    padding: 0 1rem;
+}
+
+.experience h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #bb86fc;
+}
+
+.experience p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 40px 0;
+    width: 100%;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% - 40px);
+    width: 3px;
+    background-color: #bb86fc;
+    border-radius: 10px;
+}
+
+/* Timeline Items */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+    justify-content: center;
+}
+
+.timeline-item.left .timeline-content {
+    text-align: right;
+    margin-left: 50px;
+}
+
+.timeline-item.right .timeline-content {
+    text-align: left;
+    margin-right: 50px;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bb86fc;
+    border: 2px solid #ffffff;
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    width: 70%;
+}
+
+.timeline-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.timeline-item h5 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #cccccc;
+}
+
+.timeline-item p {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+/* Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
 .project-item {
-    color: #e0e0e0; /* Project text is visible */
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Footer */
-footer {
-    color: #e0e0e0; /* Footer text is visible */
+.project-item:hover {
+    transform: translateY(-10px);
+    background-color: #333;
+}
+
+.project-item h3 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #bb86fc;
+}
+
+.project-item p {
+    font-size: 0.9rem;
+    color: #ffffff;
 }
