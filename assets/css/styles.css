@@ -111,7 +111,7 @@ body.light-theme .menu-bar ul li a {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #bb86fc;
+    background-color: #bb86fc; /* Original purple */
     border-radius: 50%;
     transition: transform 0.3s, background-color 0.3s;
     transform: translateX(0);
@@ -122,7 +122,7 @@ body.light-theme .theme-toggle-container {
 }
 
 body.light-theme .theme-toggle-container .toggle-circle {
-    background-color: #6200ee;
+    background-color: #bb86fc; /* Original purple */
 }
 
 .theme-toggle-container input:checked + .toggle-label .toggle-circle {
@@ -143,6 +143,32 @@ main {
 section {
     padding: 4rem 0;
     text-align: center;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 40px; /* Adjust this to control the gap from the previous section */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #bb86fc; /* Purple */
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid transparent;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 40px; /* Adjust this to add space above the button */
+}
+
+.cta-button:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    background-color: #9e53d0;  /* Darker shade of purple on hover */
 }
 
 /* Progressive Content Reveal */
@@ -187,7 +213,7 @@ body.light-theme footer {
 }
 
 a {
-    color: #bb86fc;
+    color: #bb86fc; /* Original purple */
     text-decoration: none;
 }
 
@@ -199,21 +225,48 @@ a:hover {
     .menu-bar {
         flex-direction: column;
         align-items: flex-start;
+        display: none; /* Hide the menu bar for mobile */
     }
 
-    .menu-bar ul {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 1rem;
+    /* Adjust the About Me section to sit naturally without extra space */
+    #about {
+        margin-top: 1rem; /* This gives a slight gap between the header and About Me section */
     }
 
-    .menu-bar ul li {
-        margin: 0.5rem 0;
+    .timeline-items {
+        align-items: flex-end;
     }
-}
 
-#about h2 {
-    margin-bottom: 2%;
+    .timeline-item {
+        flex-direction: row-reverse;
+        margin-bottom: 30px;
+        width: 90%;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: right;
+    }
+
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        text-align: right;
+    }
+
+    .timeline-item .timeline-dot {
+        left: 0;
+        margin-left: -4px;
+        width: 12px;
+        height: 12px;
+        top: 15%;
+    }
+
+    .timeline::before {
+        left: 0;
+        transform: translateX(0);
+    }
 }
 
 /* Skills & Experience Section */
@@ -226,7 +279,7 @@ a:hover {
     font-size: 1.5rem;
     margin-bottom: 15px;
     font-weight: 600;
-    color: #bb86fc;
+    color: #bb86fc; /* Original purple */
 }
 
 .skills ul {
@@ -240,21 +293,21 @@ a:hover {
 }
 
 .skills ul li strong {
-    color: #bb86fc;
+    color: #bb86fc; /* Original purple */
 }
 
 body.light-theme .skills ul li strong {
-    color: #6200ee;
+    color: #bb86fc; /* Original purple for light theme */
 }
 
 .experience p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #ffffff;
+    color: #ffffff; /* Updated to ensure visibility in dark mode */
 }
 
 body.light-theme .experience p {
-    color: #000000;
+    color: #121212; /* Adjust for light mode */
 }
 
 @media (max-width: 768px) {
@@ -289,8 +342,14 @@ body.light-theme .experience p {
     transform: translateX(-50%);
     height: calc(100% - 40px);
     width: 3px;
-    background-color: #bb86fc;
+    background-color: #bb86fc; /* Original purple */
     border-radius: 10px;
+}
+
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timeline-item {
@@ -299,48 +358,38 @@ body.light-theme .experience p {
     position: relative;
     margin-bottom: 40px;
     width: 100%;
+    justify-content: center;
 }
 
-.timeline-item.left .timeline-content {
-    text-align: right;
-    margin-left: 50px; /* Left side margin for better spacing */
-    width: calc(50% - 2rem); /* Left side takes up 50% minus space */
-    transform: translateX(-10%); /* Move left items to the left */
+.timeline-item.left {
+    justify-content: flex-start;
 }
 
-.timeline-item.right .timeline-content {
-    text-align: left;
-    margin-right: 50px; /* Right side margin for better spacing */
-    width: calc(50% - 2rem); /* Right side takes up 50% minus space */
-    transform: translateX(10%); /* Move right items to the right */
+.timeline-item.right {
+    justify-content: flex-end;
+}
+
+.timeline-content {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 5px;
+    width: 45%;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .timeline-dot {
     position: absolute;
-    top: 0;
+    top: 19%;
     left: 50%;
     margin-left: -6px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #bb86fc;
-    border: 2px solid #ffffff;
+    background-color: #bb86fc; /* Original purple */
+    border: 3px solid #000000;
     z-index: 1;
-}
-
-.timeline-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.timeline-item h5 {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.timeline-item p {
-    font-size: 0.9rem;
+    transform: translateY(-50%);
 }
 
 body.light-theme .timeline::before {
@@ -348,23 +397,89 @@ body.light-theme .timeline::before {
 }
 
 body.light-theme .timeline-dot {
-    background-color: #ffffff;
-    border: 2px solid #6200ee;
+    background-color: #bb86fc;
+    border: 2px solid #FFFFFF; /* Original purple */
 }
 
-/* Responsive Tweaks */
+/* Mobile Styles - All items right-aligned, dot left-aligned */
 @media (max-width: 768px) {
-    .timeline-item .timeline-content {
-        width: calc(70% - 2rem); /* Use more space for mobile */
+    #about {
+        margin-top: 0; /* Remove any extra margin from the About Me section */
+        padding-top: 0; /* Ensure no padding is pushing it down */
+    }
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* Add space between About Me text and photo */
+    .profile-photo {
+        margin-top: 10px; /* Add small space above the photo */
+    }
+
+    /* Other mobile adjustments */
+    .menu-bar {
+        display: none; /* Hide the menu bar for mobile */
+    }
+
+    /* Adjust the timeline for mobile */
+    .timeline-items {
+        align-items: flex-end;
+    }
+
+    .timeline-item {
+        flex-direction: row-reverse;
+        margin-bottom: 30px;
+        width: 90%;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: right;
     }
 
     .timeline-item.left .timeline-content {
-        margin-left: 0.5rem; /* Adjust for smaller screens */
+        text-align: right;
     }
 
     .timeline-item.right .timeline-content {
-        margin-right: 0.5rem; /* Adjust for smaller screens */
+        text-align: right;
+    }
+
+    .timeline-item .timeline-dot {
+        left: 0;
+        margin-left: -4px;
+        width: 12px;
+        height: 12px;
+        z-index: 1;
+        top: 15%;
+        transform: translateY(-50%);
+    }
+
+    .timeline::before {
+        left: 0;
+        transform: translateX(0);
     }
 }
 
 
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #bb86fc; /* Original purple */
+    z-index: 9999;
+    transition: width 0.1s ease-in-out;
+}
+
+body.light-theme .scroll-progress {
+    background-color: #bb86fc; /* Original purple */
+}

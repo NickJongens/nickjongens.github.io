@@ -67,6 +67,7 @@
                 <img src="assets/images/profile.jpg" alt="Nick Jongens" class="profile-photo">
                 <p>I am a systems engineer specialising in modern workplace, infrastructure and security solutions. Here, you can learn about my skills & expertise, projects and more.</p>
             </div>
+            <a href="#contact" class="cta-button">Contact Me</a>
 
             <!-- New Skills and Experience Section -->
             <div class="skills reveal">
@@ -158,11 +159,20 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Nick Jongens - v1.0.2 </p>
+        <p>&copy; 2024 Nick Jongens - v1.0.3 </p>
+        <div class="scroll-progress">
+            <script>
+                window.onscroll = function() {
+                    var scrollProgress = document.querySelector('.scroll-progress');
+                    var totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    var scrollPosition = window.pageYOffset;
+                    var progressWidth = (scrollPosition / totalHeight) * 100;
+                    scrollProgress.style.width = progressWidth + '%';
+                };
+            </script>
+            
+        </div>
     </footer>
-    <div class="progress-bar-container">
-        <div class="progress-bar"></div>
-    </div>
     <script src="js/scripts.js"></script>
 </body>
 </html>
