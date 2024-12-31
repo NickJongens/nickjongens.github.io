@@ -417,7 +417,7 @@ body.light-theme .timeline-dot {
 
     /* Add space between About Me text and photo */
     .profile-photo {
-        margin-top: 10px; /* Add small space above the photo */
+        margin-top: 15px; /* Add small space above the photo */
     }
 
     /* Other mobile adjustments */
