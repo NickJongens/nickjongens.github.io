@@ -1,6 +1,6 @@
 # Nick Jongens - Systems Engineer
 
-Welcome to my personal portfolio. I'm a Systems Engineer based in Christchurch, New Zealand, specializing in modern workplace, infrastructure, and security solutions. Explore my skills, experience, and projects.
+Welcome to my personal portfolio. I'm a Systems Engineer based in Christchurch, New Zealand, specialising in modern workplace, infrastructure, and security solutions. Explore my skills, experience, and projects.
 
 ## About Me
 
