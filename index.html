@@ -3,6 +3,7 @@
 <head>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLV06B20DB"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -65,7 +66,7 @@
             <h2>About Me</h2>
             <div class="profile-container">
                 <img src="assets/images/profile.jpg" alt="Nick Jongens" class="profile-photo">
-                <p>I'm a systems engineer living in Christchurch, New Zealand. I specialise in modern workplace, infrastructure and cloud security solutions. Here, you can learn about my skills & expertise, projects and more.</p>
+                <p>I'm a systems engineer living in Christchurch, New Zealand. I specialise in modern workplace, infrastructure and cloud security solutions. Here, you can learn about my skills, expertise, projects and more.</p>
             </div>
             <a href="#contact" class="cta-button">Contact Me</a>
 
@@ -103,7 +104,8 @@
                         <div class="timeline-content">
                             <h4>The I.T. Team Ltd</h4>
                             <h5>Service Desk Technician - Level 2</h5>
-                            <p><strong>Nov 2019 - Jun 2021</strong> (1 year 8 months)</p>
+                            <p><strong>Nov 2019 - Jun 2021</strong></p>
+                            <p>(1 year, 8 months)</p>
                             <p>Christchurch, Canterbury, New Zealand</p>
                         </div>
                     </div>
@@ -112,7 +114,8 @@
                         <div class="timeline-content">
                             <h4>The I.T. Team Ltd</h4>
                             <h5>Service Desk Technician - Level 1</h5>
-                            <p><strong>Jul 2018 - Nov 2019</strong> (1 year 5 months)</p>
+                            <p><strong>Jul 2018 - Nov 2019</strong></p>
+                            <p>(1 year, 5 months)</p>
                             <p>Christchurch, Canterbury, New Zealand</p>
                         </div>
                     </div>
@@ -121,7 +124,8 @@
                         <div class="timeline-content">
                             <h4>The Computer Doctor Ltd</h4>
                             <h5>Computer Technician</h5>
-                            <p><strong>May 2017 - Jul 2018</strong> (1 year 3 months)</p>
+                            <p><strong>May 2017 - Jul 2018</strong></p>
+                            <p>(1 year, 3 months)</p>
                             <p>Christchurch, Canterbury, New Zealand</p>
                         </div>
                     </div>
@@ -130,7 +134,8 @@
                         <div class="timeline-content">
                             <h4>IPC Computer Solutions</h4>
                             <h5>IT Technician</h5>
-                            <p><strong>Dec 2013 - Dec 2015</strong> (2 years 1 month)</p>
+                            <p><strong>Dec 2013 - Dec 2015</strong></p>
+                            <p>(2 years, 1 month)</p>
                             <p>Rangiora, Canterbury, New Zealand</p>
                         </div>
                     </div>
@@ -153,13 +158,28 @@
         </section>
 
         <section id="contact" class="reveal">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me via <a href="mailto:hello@jongens.nz">email</a>.</p>
+            <h2>Contact</h2>             
+
+            <form id="contact-form" action="/submit" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        
+                <!-- Cloudflare Turnstile -->
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA4Wcrid-Jnd9PIl"></div>
+        
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Nick Jongens - v1.0.3 </p>
+        <p>&copy; 2025 Nick Jongens - v1.0.4 </p>
         <div class="scroll-progress">
             <script>
                 window.onscroll = function() {

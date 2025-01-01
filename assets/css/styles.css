@@ -467,6 +467,161 @@ body.light-theme .timeline-dot {
     }
 }
 
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+body.light-theme form {
+    background-color: #ffffff;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+body.light-theme form label {
+    color: #121212;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #bb86fc;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #ffffff;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme form input,
+body.light-theme form textarea,
+body.light-theme form select {
+    background-color: #f9f9f9;
+    color: #121212;
+    border-color: #bb86fc;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #9e53d0;
+    outline: none;
+    box-shadow: 0 0 5px #bb86fc;
+}
+
+form button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #bb86fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #9e53d0;
+    transform: scale(1.05);
+}
+
+form button:active {
+    transform: scale(0.95);
+}
+
+form button:disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+}
+
+/* Dynamic message box resizing */
+form textarea {
+    min-height: 50px; /* Smaller by default */
+    max-height: 300px; /* Maximum height it can grow to */
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #bb86fc;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #ffffff;
+    overflow: hidden;
+    resize: none; /* Disable manual resizing */
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme form textarea {
+    background-color: #f9f9f9;
+    color: #121212;
+    border-color: #bb86fc;
+}
+
+form textarea:focus {
+    border-color: #9e53d0;
+    outline: none;
+    box-shadow: 0 0 5px #bb86fc;
+}
+
+/* Container for Turnstile Verification */
+.cf-turnstile {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    height: 100%;             /* Ensure it takes up full height of the container */
+}
+
+/* If there's a parent container for Turnstile widget */
+.cf-turnstile-wrapper {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    width: 100%;
+    height: 100%;             /* Ensure it covers full available space */
+    padding: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .cf-turnstile,
+    .cf-turnstile-wrapper {
+        height: auto;         /* Adjust height if needed */
+        padding: 1rem;        /* Add padding around the widget */
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+    }
+
+    form button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    form textarea {
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+}
 
 /* Scroll Progress Bar */
 .scroll-progress {
