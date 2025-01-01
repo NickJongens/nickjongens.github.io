@@ -38,9 +38,9 @@ Keyfade simplifies the process of securely sharing passwords and sensitive data 
 
 You can reach me through the following channels:
 
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- LinkedIn: [Nick Jongens LinkedIn](https://www.linkedin.com/in/nick-jongens)
-- GitHub: [Nick Jongens GitHub](https://github.com/NickJongens)
+- Email: [hello@jongens.nz](mailto:hello@jongens.nz)
+- LinkedIn: [LinkedIn](https://nz.linkedin.com/in/nicolasjongens)
+- GitHub: [GitHub](https://github.com/NickJongens)
 
 Feel free to get in touch if you'd like to collaborate or have any questions!
 
