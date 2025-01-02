@@ -42,7 +42,9 @@
     <header>
         <nav class="menu-bar">
             <div class="logo-title">
-                <img src="assets/images/logo.png" alt="Nick Jongens" class="logo">
+                <a href="/">
+                    <img src="assets/images/logo.png" alt="Nick Jongens" class="logo">
+                </a>
                 <span class="title">Nick Jongens</span>
             </div>
             <ul>
@@ -169,7 +171,7 @@
                 <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
         
                 <!-- Cloudflare Turnstile -->
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA4Wcrid-Jnd9PIl"></div>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA4Wcrid-Jnd9PIl" data-action="submit"></div>
         
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
