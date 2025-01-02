@@ -592,12 +592,16 @@ form textarea:focus {
 /* If there's a parent container for Turnstile widget */
 .cf-turnstile-wrapper {
     display: flex;
-    justify-content: center;  /* Horizontally center */
-    align-items: center;      /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
     width: 100%;
-    height: 100%;             /* Ensure it covers full available space */
+    height: 100%;            /* Ensure it covers full available space */
     padding: 1rem;
+    border-radius: 10px;     /* Rounds the edges of the container */
+    background-color: #1e1e1e; /* Optional: Add background to make the rounded corners visible */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for a subtle 3D effect */
 }
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
