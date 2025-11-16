@@ -4,7 +4,7 @@ Welcome to my personal portfolio. I'm a Systems Engineer based in Christchurch, 
 
 ## About Me
 
-I'm passionate about delivering scalable, secure, and efficient IT systems to organizations of all sizes. With over six years of experience in the managed services provider (MSP) industry, I've helped optimize infrastructure, secure environments, and streamline business operations using cutting-edge technologies.
+I'm passionate about delivering scalable, secure, and efficient IT systems to organizations of all sizes. With over seven years of experience in the managed services provider (MSP) industry, I've helped optimize infrastructure, secure environments, and streamline business operations using cutting-edge technologies.
 
 ## Skills & Expertise
 
