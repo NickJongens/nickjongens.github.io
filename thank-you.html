@@ -12,6 +12,12 @@
       gtag('config', 'G-FLV06B20DB');
     </script>
     <!-- End Google Analytics -->
+    <!-- PostHog conversion tracking -->
+    <script>
+      (function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2===o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],o="capture".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_AwtxvZWBj55f5ty8PovYQ6kqi4vh54js9y86yGQLxKa2', { api_host: 'https://eu.i.posthog.com', defaults: '2026-05-30', enable_heatmaps: true });
+    </script>
+    <!-- End PostHog -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Thank you for your submission. Nick Jongens is a systems engineer specializing in modern workplace, infrastructure, and security solutions.">
@@ -24,7 +30,7 @@
     <meta name="twitter:title" content="Thank You - Nick Jongens">
     <meta name="twitter:description" content="Thank you for your submission. Nick Jongens is a systems engineer specializing in modern workplace, infrastructure, and security solutions.">
     <meta name="twitter:image" content="assets/images/logo.png">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, follow">
        
     <title>Thank You - Nick Jongens</title>
     <!-- Favicon Links -->
@@ -76,7 +82,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Nick Jongens - v1.0.4</p>
+        <p>&copy; 2026 Nick Jongens - v1.0.7</p>
         <div class="scroll-progress">
             <script>
                 window.onscroll = function() {
