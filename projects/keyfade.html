@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLV06B20DB"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FLV06B20DB');</script>
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split('.');2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments)))}}(p=t.createElement('script')).type='text/javascript',p.crossOrigin='anonymous',p.async=!0,p.src=s.api_host.replace('.i.posthog.com','-assets.i.posthog.com')+'/static/array.js',(r=t.getElementsByTagName('script')[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a='posthog',u.people=u.people||[],o='capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagResult reloadFeatureFlags getSurveys getNextSurveyStep onSessionId'.split(' '),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_AwtxvZWBj55f5ty8PovYQ6kqi4vh54js9y86yGQLxKa2',{api_host:'https://eu.i.posthog.com',defaults:'2026-05-30',enable_heatmaps:true});
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KeyFade is a self-hosted Node.js and Azure Key Vault project for expiring secret-sharing links, with retrieval, deletion, rate limiting and abuse telemetry.">
+    <meta name="author" content="Nick Jongens">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jongens.nz/projects/keyfade.html">
+    <meta property="og:title" content="KeyFade | Nick Jongens">
+    <meta property="og:description" content="An expiring secret-sharing service built with Node.js, Express and Azure Key Vault.">
+    <meta property="og:image" content="https://jongens.nz/assets/images/logo.png">
+    <meta property="og:url" content="https://jongens.nz/projects/keyfade.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KeyFade | Nick Jongens">
+    <meta name="twitter:description" content="A self-hosted secret-sharing project using expiring links and Azure Key Vault.">
+    <meta name="twitter:image" content="https://jongens.nz/assets/images/logo.png">
+    <title>KeyFade | Expiring Secret Sharing with Azure Key Vault</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/project-pages.css">
+</head>
+<body>
+<main class="project-page">
+    <a class="project-home-link" href="/">← Nick Jongens portfolio</a>
+    <section class="project-hero">
+        <h1>KeyFade: expiring secret-sharing links</h1>
+        <p class="project-lede">KeyFade is a self-hostable application for sharing a password or other short-lived secret through a link with an expiry. It combines a browser interface with a Node.js API and Azure Key Vault storage.</p>
+        <ul class="project-meta" aria-label="Project technologies"><li>Node.js</li><li>Express</li><li>Azure Key Vault</li><li>Docker</li></ul>
+        <div class="project-actions">
+            <a class="cta-button project-repo-link" href="https://github.com/NickJongens/KeyFade" target="_blank" rel="noopener noreferrer">View KeyFade on GitHub</a>
+            <a class="project-secondary-button" href="/#contact" data-analytics="contact">Contact Nick about this project</a>
+        </div>
+    </section>
+    <section class="project-section">
+        <h2>The problem it addresses</h2>
+        <p>Passwords and temporary access details can remain in ordinary chat or email histories long after they are needed. KeyFade provides a workflow for creating a time-limited link that a recipient can use to retrieve a shared value.</p>
+        <p>The project is designed to be deployed by the organisation using it, with Azure Key Vault as the backing store for secret values.</p>
+    </section>
+    <section class="project-section">
+        <h2>How the workflow works</h2>
+        <ol>
+            <li>The sender enters a secret and chooses an expiry period: 1, 7, 14, 30, 60 or 90 days.</li>
+            <li>The API generates a unique identifier and a separate random access key, then stores the secret and key as separate Azure Key Vault entries with expiry dates.</li>
+            <li>The sender shares the generated link with the intended recipient.</li>
+            <li>The recipient can retrieve the value while the link is valid. The link holder can also delete the secret before expiry.</li>
+        </ol>
+    </section>
+    <section class="project-section">
+        <h2>Implementation details</h2>
+        <div class="project-card"><h3>Browser interface</h3><p>The EJS-rendered frontend provides create, copy-link, retrieve, copy-secret and delete states. The browser sends create, retrieve and delete requests to the API.</p></div>
+        <div class="project-card"><h3>API and secret storage</h3><p>An Express service validates requests, generates identifiers and access keys, and uses Azure Identity and the Azure Key Vault SDK to store and retrieve secret entries with expiry.</p></div>
+        <div class="project-card"><h3>Abuse visibility</h3><p>Rate limiting and structured logging support service protection and troubleshooting. Optional webhook notifications and an abuse-telemetry endpoint expose events such as failed attempts and rate-limit activity.</p></div>
+        <div class="project-card"><h3>Deployment</h3><p>The application is containerised for Docker deployment and includes Azure deployment resources and configuration guidance.</p></div>
+    </section>
+    <section class="project-section">
+        <h2>Security model</h2>
+        <p>The current implementation sends the entered value to the backend API, which stores it in Azure Key Vault. The service and its Azure environment are therefore part of the trust boundary; this implementation is not client-side or zero-knowledge end-to-end encryption. Deploy it only where the service operator and Key Vault access model are trusted.</p>
+        <p>Sharing links are bearer links: anyone who obtains a valid link may be able to access the secret until it expires or is deleted. Choose the sharing channel and data carefully.</p>
+    </section>
+    <section class="project-section">
+        <h2>What this project demonstrates</h2>
+        <ul>
+            <li>Integrating a Node.js service with Azure Key Vault and Azure Identity.</li>
+            <li>Designing create, retrieve, expire and delete flows for temporary data.</li>
+            <li>Adding rate limiting, structured logging and abuse telemetry.</li>
+            <li>Packaging an application for self-hosted container deployment.</li>
+        </ul>
+    </section>
+    <section class="project-section">
+        <h2>Source code and documentation</h2>
+        <p>The repository includes frontend and backend source, container files, an Azure deployment template, API routes and configuration guidance.</p>
+        <p><a class="project-repo-link" href="https://github.com/NickJongens/KeyFade" target="_blank" rel="noopener noreferrer">Explore the KeyFade GitHub repository</a></p>
+    </section>
+</main>
+<footer><p>&copy; 2026 Nick Jongens - v1.0.11</p></footer>
+<script src="../js/scripts.js"></script>
+</body>
+</html>
