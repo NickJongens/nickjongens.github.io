@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLV06B20DB"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FLV06B20DB');</script>
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split('.');2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments)))}}(p=t.createElement('script')).type='text/javascript',p.crossOrigin='anonymous',p.async=!0,p.src=s.api_host.replace('.i.posthog.com','-assets.i.posthog.com')+'/static/array.js',(r=t.getElementsByTagName('script')[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a='posthog',u.people=u.people||[],o='capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagResult reloadFeatureFlags getSurveys getNextSurveyStep onSessionId'.split(' '),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_AwtxvZWBj55f5ty8PovYQ6kqi4vh54js9y86yGQLxKa2',{api_host:'https://eu.i.posthog.com',defaults:'2026-05-30',enable_heatmaps:true});
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Printune helps IT administrators create Microsoft Intune Win32 packages for TCP/IP printers, including driver details, PowerShell install and uninstall scripts, and detection settings.">
+    <meta name="author" content="Nick Jongens">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jongens.nz/projects/printune.html">
+    <meta property="og:title" content="Printune | Nick Jongens">
+    <meta property="og:description" content="A browser-based toolkit for preparing Microsoft Intune printer deployment packages.">
+    <meta property="og:image" content="https://jongens.nz/assets/images/logo.png">
+    <meta property="og:url" content="https://jongens.nz/projects/printune.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Printune | Nick Jongens">
+    <meta name="twitter:description" content="Create deployment packages for local TCP/IP printers managed with Microsoft Intune.">
+    <meta name="twitter:image" content="https://jongens.nz/assets/images/logo.png">
+    <title>Printune | Microsoft Intune Printer Deployment Toolkit</title>
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/project-pages.css">
+</head>
+<body>
+<main class="project-page">
+    <a class="project-home-link" href="/">← Nick Jongens portfolio</a>
+    <section class="project-hero">
+        <h1>Printune: build Microsoft Intune printer packages</h1>
+        <p class="project-lede">Printune is a browser-based toolkit that helps IT administrators prepare consistent Microsoft Intune Win32 deployments for local TCP/IP printers.</p>
+        <ul class="project-meta" aria-label="Project technologies"><li>Microsoft Intune</li><li>Win32 apps</li><li>PowerShell</li><li>Printer drivers</li></ul>
+        <div class="project-actions">
+            <a class="cta-button project-repo-link" href="https://printune.jongens.nz/" target="_blank" rel="noopener noreferrer">Open the Printune app</a>
+            <a class="project-secondary-button" href="https://github.com/NickJongens/Printune" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+        </div>
+    </section>
+    <section class="project-section">
+        <h2>The problem it addresses</h2>
+        <p>Printer deployments can become inconsistent when each queue is packaged by hand: driver, port, installation commands and Intune detection settings all need to agree. Printune brings those inputs together and generates deployment scripts and configuration details for administrators to review.</p>
+        <p>It aims to reduce repetitive setup work and make printer deployments easier to reproduce across managed Windows devices.</p>
+    </section>
+    <section class="project-section">
+        <h2>How it works</h2>
+        <ol>
+            <li>Enter a printer name, TCP/IP address or hostname, port name and driver information.</li>
+            <li>Select a pre-configured model when available, or supply a driver ZIP and INF details manually.</li>
+            <li>Review the generated install and uninstall commands and registry detection settings.</li>
+            <li>Download the package, prepare it with Microsoft's Win32 Content Prep Tool, then upload the resulting .intunewin file to Intune.</li>
+        </ol>
+    </section>
+    <section class="project-section">
+        <h2>Package contents and capabilities</h2>
+        <div class="project-card"><h3>Driver and queue setup</h3><p>The generated package can include install and uninstall scripts and the selected printer driver archive. Configuration supports local TCP/IP ports and named printer queues.</p></div>
+        <div class="project-card"><h3>Flexible driver configuration</h3><p>Use a pre-configured model or enter the exact driver model name and INF filename. The installer searches extracted packages for driver files under common architecture folders such as x64 and amd64.</p></div>
+        <div class="project-card"><h3>Printer defaults</h3><p>An optional exported printer configuration can carry supported global defaults, such as paper size, colour and duplex settings, into deployment.</p></div>
+        <div class="project-card"><h3>Intune settings</h3><p>Printune provides example install and uninstall commands plus a registry-based detection rule for the deployed printer queue. The package can be installed in the System context through an Intune Win32 app.</p></div>
+        <div class="project-card"><h3>Driver publisher trust and troubleshooting</h3><p>For applicable signed drivers, an optional switch validates the catalogue signature and certificate chain before trusting that publisher. The project also documents installation logs, SetupAPI diagnostics and common error codes.</p></div>
+    </section>
+    <section class="project-section">
+        <h2>Testing and safe deployment</h2>
+        <p>Printer drivers vary in INF structure, signing, supporting files and behaviour. Test each generated package on a representative Windows device before broad deployment, then verify the queue, port, defaults, detection rule and uninstall behaviour in your environment.</p>
+        <p>The uninstall script removes the requested queue and only removes a port when no other printer is using it. Driver packages and publisher certificates are retained because other queues may still depend on them.</p>
+    </section>
+    <section class="project-section">
+        <h2>What this project demonstrates</h2>
+        <ul>
+            <li>Turning a repeated endpoint-management task into a guided configuration workflow.</li>
+            <li>Preparing PowerShell install and uninstall logic for Intune Win32 apps.</li>
+            <li>Accounting for driver signing, detection, logging and rollback considerations.</li>
+            <li>Documenting steps so an administrator can review and test a package before deployment.</li>
+        </ul>
+    </section>
+    <section class="project-section">
+        <h2>Try it and explore the source</h2>
+        <p>The live app is available at <a href="https://printune.jongens.nz/" target="_blank" rel="noopener noreferrer">printune.jongens.nz</a>. The GitHub repository contains source code, setup instructions, a configuration guide and issue tracker.</p>
+        <p><a class="project-repo-link" href="https://github.com/NickJongens/Printune" target="_blank" rel="noopener noreferrer">Explore the Printune GitHub repository</a></p>
+    </section>
+</main>
+<footer><p>&copy; 2026 Nick Jongens - v1.0.11</p></footer>
+<script src="../js/scripts.js"></script>
+</body>
+</html>
