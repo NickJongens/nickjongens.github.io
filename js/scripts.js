@@ -1,63 +1,34 @@
-/* scripts.js */
-const themeToggle = document.getElementById('theme-toggle');
-const menuLinks = document.querySelectorAll('.menu-bar a');
+/* Site interactions */
+document.documentElement.classList.add('js');
 
-// Theme toggle functionality
-function switchTheme() {
-    document.body.classList.toggle('light-theme');
-    if (document.body.classList.contains('light-theme')) {
-        themeToggle.checked = true;
-    } else {
-        themeToggle.checked = false;
-    }
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+    themeToggle.addEventListener('change', () => {
+        document.body.classList.toggle('light-theme', themeToggle.checked);
+    });
 }
 
-themeToggle.addEventListener('change', switchTheme);
+// Keep native anchor navigation so root, hash, and cross-page links all work.
+// The browser provides accessible keyboard behavior and updates the URL hash.
 
-menuLinks.forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+// Track meaningful conversion actions in PostHog.
+document.querySelectorAll('[data-analytics="contact"]').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.posthog) posthog.capture('contact_cta_clicked', { destination: link.getAttribute('href') });
     });
-});
+});// Record a successful form redirect on the thank-you page.
+if (window.posthog && (window.location.pathname.endsWith("/thank-you.html") || window.location.pathname.endsWith("/thank-you"))) {
+    posthog.capture('contact_form_success');
+}
 
-// Progressive Content Reveal
+// Progressive reveal remains decorative; all content stays visible to crawlers and no-script visitors.
 const revealElements = document.querySelectorAll('.reveal');
-
 function handleScroll() {
     revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = window.innerHeight - 150;
-
-        if (elementTop < elementVisible) {
+        if (element.getBoundingClientRect().top < window.innerHeight - 100) {
             element.classList.add('revealed');
-        } else {
-            element.classList.remove('revealed');
         }
     });
 }
-
-// Initial scroll event to check content visibility
-window.addEventListener('scroll', handleScroll);
-
-// Call once to reveal content on page load if already in view
+window.addEventListener('scroll', handleScroll, { passive: true });
 handleScroll();
-
-// Function to update the progress bar
-function updateProgressBar() {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    
-    const progressBar = document.querySelector('.progress-bar');
-    progressBar.style.width = `${progress}%`;
-}
-
-// Add event listener for scrolling
-window.addEventListener('scroll', updateProgressBar);
-
-// Initialize the progress bar on page load
-document.addEventListener('DOMContentLoaded', updateProgressBar);
