@@ -1,49 +1,52 @@
-# Nick Jongens - Systems Engineer
+# Nick Jongens — Senior IT Support Technician
 
-Welcome to my personal portfolio. I'm a Systems Engineer based in Christchurch, New Zealand, specialising in modern workplace, infrastructure, and security solutions. Explore my skills, experience, and projects.
+Portfolio for Nick Jongens, a remote Level 3 Senior Support Technician at ADITS based in Christchurch, New Zealand. I work across Microsoft 365, Azure, endpoint management, infrastructure and cloud security, with 8+ years of managed services experience.
 
-## About Me
-
-I'm passionate about delivering scalable, secure, and efficient IT systems to organizations of all sizes. With over seven years of experience in the managed services provider (MSP) industry, I've helped optimize infrastructure, secure environments, and streamline business operations using cutting-edge technologies.
-
-## Skills & Expertise
-
-- **Microsoft 365**: Implementing scalable and secure communications and connected data experiences (Exchange Online, SharePoint, Teams, OneDrive).
-- **Microsoft Azure**: Cloud management and security solutions, specializing in deployment and optimization of Azure services.
-- **Security**: Expertise in Fortinet FortiGate for firewall management, Cloudflare for DDoS protection and CDN, and system hardening techniques.
-- **Networking & Infrastructure**: Hands-on experience with network technologies, including IP routing, VPN setup, and performance optimization.
-- **Virtualization**: Experience with VMware and Hyper-V for designing and deploying virtualized environments.
-- **Backup & Disaster Recovery**: Implementing robust backup strategies and disaster recovery solutions for business continuity.
-- **Client Support & Consulting**: Providing technical support and consulting services for clients to integrate new technologies and optimize IT environments.
+- **Website:** [jongens.nz](https://jongens.nz/)
+- **Location:** Christchurch, Canterbury, New Zealand
+- **Current role:** Level 3 Senior Support Technician, ADITS (remote), July 2026–present
+- **Contact:** [hello@jongens.nz](mailto:hello@jongens.nz) · [LinkedIn](https://nz.linkedin.com/in/nicolasjongens)
 
 ## Experience
 
-### The I.T. Team Ltd
-- **I.T. Systems Engineer** (Jul 2021 - Present)
-- **Service Desk Technician - Level 2** (Nov 2019 - Jun 2021)
-- **Service Desk Technician - Level 1** (Jul 2018 - Nov 2019)
+- **ADITS** — Level 3 Senior Support Technician (July 2026–present; remote)
+- **The I.T. Team Ltd** — I.T. Systems Engineer (July 2021–June 2026)
+- **The I.T. Team Ltd** — Service Desk Technician, Level 2 (November 2019–June 2021)
+- **The I.T. Team Ltd** — Service Desk Technician, Level 1 (July 2018–November 2019)
+- **The Computer Doctor Ltd** — Computer Technician (May 2017–July 2018)
+- **IPC Computer Solutions** — IT Technician (December 2013–December 2015)
 
-### The Computer Doctor Ltd
-- **Computer Technician** (May 2017 - Jul 2018)
+The 8+ years of managed services experience reflects the IT Team and ADITS roles from July 2018 onward.
 
-### IPC Computer Solutions
-- **IT Technician** (Dec 2013 - Dec 2015)
+## Skills and focus areas
+
+- **Microsoft cloud:** Microsoft 365, Exchange Online, SharePoint, Teams, OneDrive, Azure and Entra ID.
+- **Endpoint management:** Microsoft Intune, Windows deployment, application packaging and troubleshooting.
+- **Security:** Microsoft security tooling, Fortinet FortiGate, Cloudflare and practical hardening aligned with established security frameworks.
+- **Infrastructure:** Networking, VPNs, VMware, Hyper-V, backup and disaster recovery.
+- **Support and consulting:** Complex incident resolution, service desk escalation, technical documentation and helping organisations improve their IT environments.
 
 ## Projects
 
-### [Keyfade](https://github.com/NickJongens/KeyFade)
-Keyfade simplifies the process of securely sharing passwords and sensitive data using end-to-end encryption. Designed for simplicity and security, it allows you to share passwords without worrying about data exposure.
+### [KeyFade project overview](https://jongens.nz/projects/keyfade.html)
+A self-hostable Node.js and Express application for creating expiring secret-sharing links backed by Azure Key Vault. The page explains the workflow, architecture and current security model.
+
+- [KeyFade source repository](https://github.com/NickJongens/KeyFade)
+
+### [Printune project overview](https://jongens.nz/projects/printune.html)
+A browser-based toolkit for preparing Microsoft Intune Win32 packages for local TCP/IP printer deployments, including driver information, install and uninstall scripts, and detection settings.
+
+- [Open the Printune app](https://printune.jongens.nz/)
+- [Printune source repository](https://github.com/NickJongens/Printune)
+
+## About this repository
+
+This repository contains the static portfolio website published on GitHub Pages at [jongens.nz](https://jongens.nz/). It includes the site pages, project overviews, styles, analytics setup, robots.txt and XML sitemap.
 
 ## Contact
 
-You can reach me through the following channels:
-
-- Email: [hello@jongens.nz](mailto:hello@jongens.nz)
-- LinkedIn: [LinkedIn](https://nz.linkedin.com/in/nicolasjongens)
-- GitHub: [GitHub](https://github.com/NickJongens)
-
-Feel free to get in touch if you'd like to collaborate or have any questions!
+For career opportunities, technical discussions or project questions, email [hello@jongens.nz](mailto:hello@jongens.nz) or connect on [LinkedIn](https://nz.linkedin.com/in/nicolasjongens).
 
 ---
 
-&copy; 2025 Nick Jongens - v1.0.4
+© 2026 Nick Jongens · Portfolio site v1.0.11
