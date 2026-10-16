@@ -644,3 +644,68 @@ form textarea:focus {
 body.light-theme .scroll-progress {
     background-color: #bb86fc; /* Original purple */
 }
+
+
+/* Conversion, accessibility, and mobile navigation improvements */
+h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem auto 0;
+}
+
+.hero-actions .cta-button { margin-top: 0; }
+
+.secondary-link {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    border: 2px solid #bb86fc;
+    border-radius: 2rem;
+    font-weight: 600;
+}
+
+.contact-alternative { margin-top: 1.5rem; text-align: center; }
+section[id] { scroll-margin-top: 7rem; }
+
+/* Keep page content available to crawlers, assistive technology, and no-script visitors. */
+.reveal { opacity: 1; transform: none; }
+
+@media (max-width: 768px) {
+    .menu-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+        padding: 0.65rem 0.9rem;
+    }
+
+    .menu-bar .logo-title { justify-content: center; }
+    .menu-bar .logo { max-width: 38px; margin-right: 0.6rem; }
+    .menu-bar .title { font-size: 1.15rem; }
+    .menu-bar ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.55rem 1rem;
+    }
+    .menu-bar ul li { margin-left: 0; }
+    .menu-bar ul li a { font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
